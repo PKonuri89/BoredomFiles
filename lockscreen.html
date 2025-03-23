@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Morris Rosenberg and Prasanth Konuri">
+    <meta name="generator" content="Hugo 0.84.0">
+    <link rel="favicon" type="image" href="Lindsay_Louis.jpg" />
+    <title>Log in Please!</title>
+
+
+
+    <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="index.css" />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      body{
+        overflow: hidden;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="cover.css" rel="stylesheet"> -->
+
+    <script src="https://unpkg.com/konva@8/konva.min.js"></script>
+
+  </head>
+
+
+  <body class="d-flex h-100 text-center text-white my-bg-image">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <div>
+        <h3 class="float-md-start mb-0">orb pets</h3>
+      </div>
+    </header>
+
+    <main class="px-3 pb-0">
+      <h1>Hi, Great to see you here!</h1>
+      <p class="lead">Drag the box towards the right and unlock.</p>
+
+    </main>
+
+
+  <!--Konva draggable content -->
+
+  <div class="container-sm positon-relative" id="container" align="center"></div>
+  <script>
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+
+    var stage = new Konva.Stage({
+      container: 'container',
+      width: 500,
+      height: 50,
+    });
+
+    var layer = new Konva.Layer();
+    var rectX = stage.width()
+    var rectY = stage.height()
+
+
+    var box = new Konva.Rect({
+      x: 1,
+      y: 2,
+      width: 75,
+      height: 50,
+      fill: '#FFFFFF',
+      stroke: 'white',
+      strokeWidth: 4,
+      draggable: true,
+      dragBoundFunc: function (pos) {
+          return {
+            x: pos.x,
+            y: this.absolutePosition().y,
+          };
+        },
+    });
+
+    // add cursor styling
+
+    box.on('mouseover', function () {
+      document.body.style.cursor = 'pointer';
+    });
+    box.on('mouseout', function () {
+      document.body.style.cursor = 'default';
+    });
+
+    stage.on('dragend', function () {
+      window.location.replace("guessthenumber.html");
+    })
+
+
+  //  boxGroup.add(box).add(boxText);
+
+    layer.add(box);
+    stage.add(layer);
+  </script>
+  <script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = dt.toLocaleString();
+  </script>
+
+
+
+
+
+
+  <footer class="mt-auto text-white-50">
+    <p>Copyright<sup>&copy;</sup> 2022 </p>
+  </footer>
+</div>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="index.css" />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script charset="utf-8" type="text/javascript" src="index.js"></script>
+
+
+    <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-mycolor">
+
+    <script>
+    $(document).ready(function(){
+      $("#hide").click(function(){
+        $("#magic").hide(1500);
+      });
+      $("#show").click(function(){
+        $("#magic").show(2000);
+      });
+    });
+
+    $(document).ready(function(){
+      $("#show").click(function(){
+        $("#p1").css("color", "orange")
+          $(body).css("color", "magenta")
+          .slideUp(1000)
+          .slideDown(1000);
+      });
+    });
+
+    $(document).ready(function(){
+      $("#moreMagic").click(function(){
+        $("#mainDiv").animate({left: '250px'});
+      });
+    });
+
+    $(document).ready(function(){
+        $("#goback").click(function(){
+          $("#mainDiv").animate({top: '250px'});
+        });
+      });
+
+    </script>
+
+
+<div class="container-fluid px-3 justify-content-center position-relative" id="mainDiv" align="center">
+
+    <div class="container-fluid navbar-md">
+      <div class="container-fluid navbar-md">
+        <h3 class="float-md-start mb-0">jQuery Test</h3>
+      </div>
+    </div>
+
+
+    <main class="px-3">
+      <p id="p1">Hello! Start by clicking either of these buttons! (Recomendation: Click Hide first!)</p>
+      <p id="magic">Watch Some Magic happen!</p>
+
+      <button id="hide">Hide</button>
+      <button id="show">Show</button>
+      <button id="moreMagic">You Wanna see more Witchcraft?</button>
+      <button id="goback">Go Down!?</button>
+    </main>
+
+      <footer class="mt-auto text-white-50">
+        <p>Copyright&copy; Myself</p>
+      </footer>
+
+
+</div>
+
+  </body>
+</html>

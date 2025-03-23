@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+    <input type="number" name="input" value="" id="input">
+    <button type="button" name="button" id="submit">Submit</button>
+
+  <script>
+
+      var bry = document.getElementById('input').value;
+      var sbmt = document.getElementById('submit');
+      var decimal = parseInt(bry).toString(2);
+
+      sbmt.onclick = function () {
+
+        document.write(decimal)
+
+      };
+
+  </script>
+</body>
+</html>

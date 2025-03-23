@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Number Guessing Game</title>
+
+<link rel="stylesheet" href="index.css"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"  />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
+</head>
+
+<body class="bg-light">
+
+          <div class="container-fluid bg-light">
+            <header class="bg-light pt-3">
+                <h3 class="float-md-start mb-0 text-dark">Prasanth Konuri<sup>®</sup></h3>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                  <a class="nav-link active" aria-current="page" href="lockscreen.html">Home</a>
+                  <a class="nav-link" href="index.html">Page 1</a>
+                  <a class="nav-link" href="test_index.html">Bootstrap Trial</a>
+                  <a class="nav-link" href="jquery_test.html">jQuery Trial</a>
+                  <a class="nav-link" href="arrays.html">JS Arrays Trial</a>
+                </nav>
+              </header>
+            </div>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div class="container-fluid text-dark bg-light justify-content-center pt-3" align="center">
+
+<h1 class="h1">Guess The Number</h1>
+
+<p>We have selected a random number between 1 - 10.
+See if you can guess it.</p>
+
+
+<input type = "text" id = "guessField" class = "guessField" placeholder="Enter a Guess:">
+<button type = "submit" class = " btn btn-primary btn-md" id = "submitguess">Submit Guess</button>
+
+<br>
+<br>
+<div class="justify-content-center p-5">
+
+<img src="ihgr.png" alt="IHGR" height="250px" width="275px"/>
+
+</div>
+
+</div>
+
+<script type = "text/javascript">
+
+// random value generated
+var y = Math.floor(Math.random() * 10 + 1);
+
+// counting the number of guesses
+// made for correct Guess
+var guess = 1;
+
+document.getElementById("submitguess").onclick = function(){
+
+// number guessed by user
+var x = document.getElementById("guessField").value;
+
+if(x == y){
+alert("CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "
++ guess + " GUESSES ");
+}
+else if(x > y) {
+guess++;
+alert("TRY A SMALLER NUMBER");
+}
+else{
+guess++;
+alert("TRY A GREATER NUMBER")
+}
+}
+</script>
+</body>
+</html>
